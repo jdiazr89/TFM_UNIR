@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente conversacional con memoria persistente para atención al cliente basado en Memori</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-light">
+
+    <!-- Encabezado -->
+    <header class="bg-primary text-white text-center py-3 shadow-sm">
+        <h2 class="fw-bold">Asistente conversacional con memoria persistente para atención al cliente basado en Memori</h2>
+        <p class="mb-0">Proyecto desarrollado por:  
+            <strong>Diego José Leiva Espín</strong> · 
+            <strong>Junior Alberto Díaz Rojas</strong> · 
+            <strong>Yuly Astrid Ballén González</strong>
+        </p>
+    </header>
+
+    <div class="container-fluid mt-4">
+        <div class="row justify-content-center">
+
+            <!-- Panel lateral: info del chatbot / usuario -->
+            <div class="col-md-3 mb-3">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="avatar-bot me-2">C</div>
+                            <div>
+                                <div class="fw-bold">Compita</div>
+                                <div class="text-muted" style="font-size: 0.9em;">Asistente de atención al cliente</div>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <h6 class="fw-bold">Estado</h6>
+                        <p class="mb-1" id="status-indicator">
+                            🟢 En línea
+                        </p>
+
+                        <div id="memory-indicator" 
+                            style="visibility:hidden; 
+                                   color: #28a745; 
+                                   font-size: 0.9em; 
+                                   font-weight: 600; 
+                                   margin-bottom: 10px;">
+                            ● Memoria activa en esta conversación
+                        </div>
+
+                        <hr>
+
+                        <h6 class="fw-bold">Acciones rápidas</h6>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-outline-primary btn-sm quick-action" data-text="Quiero consultar el estado de mi pedido">
+                                Consultar estado de pedido
+                            </button>
+                            <button class="btn btn-outline-primary btn-sm quick-action" data-text="Tengo un problema técnico con el servicio">
+                                Reportar un problema técnico
+                            </button>
+                            <button class="btn btn-outline-primary btn-sm quick-action" data-text="Quiero información sobre sus productos o servicios">
+                                Información de productos
+                            </button>
+                            <button class="btn btn-outline-danger btn-sm quick-action" data-text="Quiero presentar un reclamo">
+                                Presentar un reclamo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel principal de chat -->
+            <div class="col-md-7">
+                <div class="card shadow-sm chat-card">
+                    <div class="card-header bg-white border-0 d-flex align-items-center">
+                        <div class="avatar-bot me-2">C</div>
+                        <div>
+                            <div class="fw-bold">Compita</div>
+                            <div class="text-muted" style="font-size: 0.9em;">Asistente virtual de atención al cliente</div>
+                        </div>
+                    </div>
+
+                    <div class="card-body" id="chat-box">
+                        <!-- Mensajes aparecerán aquí -->
+                    </div>
+
+                    <div class="card-footer bg-white">
+                        <div class="input-group">
+                            <input type="text" id="user-input" class="form-control" placeholder="Escribe tu mensaje...">
+                            <button class="btn btn-primary" id="send-btn">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
