@@ -1,4 +1,4 @@
-#  Compita — Asistente Conversacional con Memoria Persistente  
+#  Diseño y evaluación de un asistente conversacional con memoria persistente para atención al cliente
 ### Proyecto de TFM — UNIR  
 Autores: Diego José Leiva Espín, Junior Alberto Díaz Rojas, Yuly Astrid Ballén González
 
