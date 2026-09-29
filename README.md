@@ -81,3 +81,55 @@ uvicorn app.main:app --reload
 5️⃣ Abrir el frontend
 Abrir frontend/index.html en el navegador.
 
+---
+
+## Evaluación robusta (memoria vs no memoria)
+
+Se incorporó una batería de escenarios más realista para evitar resultados artificialmente favorables.
+
+### Qué cambia
+
+- Los escenarios mezclan casos de:
+  - contradicción (preferencias que cambian)
+  - información obsoleta
+  - ruido conversacional
+  - consultas irrelevantes
+  - entidades similares (riesgo de confusión)
+  - casos neutrales de control
+- El análisis no depende de métricas fijas del backend.
+- El script de evaluación calcula puntuaciones objetivas por reglas de verificación (checks).
+
+### Archivos de evaluación
+
+- eval/scenarios.py
+- eval/runner.py
+- eval/eval_memory_vs_nomemory.py
+
+### Cómo ejecutar
+
+1. Levantar backend:
+
+  uvicorn app.main:app --reload
+
+2. Ejecutar la batería:
+
+  python eval/runner.py
+
+### Salidas generadas
+
+- eval/results/results.csv
+- eval/results/results.json
+- eval/results/summary.md
+
+El archivo summary.md resume cantidad de escenarios ejecutados, promedio con memoria, promedio sin memoria, delta y desglose por categoría.
+
+---
+
+## Guía de aprendizaje del código
+
+Para estudiar el proyecto archivo por archivo, revisa:
+
+- GUIA_APRENDIZAJE_PROYECTO.md
+
+Incluye explicación detallada de responsabilidades, flujo extremo a extremo y cómo se conectan backend, memoria, LLM y evaluación.
+

@@ -1,3 +1,5 @@
+# Punto de entrada de la API FastAPI.
+# Este archivo monta middlewares, rutas y un warm-up no bloqueante del modelo.
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import requests
@@ -21,6 +23,7 @@ app.include_router(chat_router)
 # 🔥 Warm-up automático del modelo
 @app.on_event("startup")
 async def warmup_model():
+    # El warm-up reduce la latencia del primer prompt real al modelo.
     try:
         requests.post(
             "http://localhost:11434/api/generate",

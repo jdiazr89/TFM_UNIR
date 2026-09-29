@@ -1,13 +1,16 @@
+/* Tipografía base de la interfaz */
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+/* Contenedor del chat: alto fijo y composición vertical */
 .chat-card {
     height: 520px;
     display: flex;
     flex-direction: column;
 }
 
+/* Área de mensajes: ocupa espacio restante y permite scroll */
 #chat-box {
     flex: 1;
     overflow-y: auto;
@@ -17,6 +20,7 @@ body {
 
 /* Mensajes */
 .user-message {
+    /* Burbuja de usuario alineada a la derecha */
     background: #d1e7dd;
     padding: 8px 12px;
     border-radius: 12px;
@@ -27,6 +31,7 @@ body {
 }
 
 .bot-message {
+    /* Burbuja del asistente alineada a la izquierda */
     background: #e2e3e5;
     padding: 8px 12px;
     border-radius: 12px;
@@ -36,6 +41,7 @@ body {
 }
 
 .bot-temp {
+    /* Estado temporal mientras llega la respuesta del backend */
     opacity: 0.6;
     font-style: italic;
     max-width: 80%;
@@ -44,6 +50,7 @@ body {
 
 /* Avatar del bot */
 .avatar-bot {
+    /* Avatar circular con inicial del asistente */
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -57,9 +64,11 @@ body {
 
 /* Scroll suave */
 #chat-box::-webkit-scrollbar {
+    /* Ancho del scrollbar en navegadores webkit */
     width: 6px;
 }
 #chat-box::-webkit-scrollbar-thumb {
+    /* Color y forma del cursor del scrollbar */
     background-color: rgba(0,0,0,0.2);
     border-radius: 3px;
 }
